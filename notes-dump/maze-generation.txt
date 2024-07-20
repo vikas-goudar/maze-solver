@@ -1,1 +1,14 @@
-
+Alogirthm: Recursive back tracker and stack
+This ensures that each node is visitable by every other node 
+  Select a node 
+  Add node to the stack {Link I}
+  Mark the node as being visited
+  Check for any unvisited neighbours of the node {Link II}
+    If exists
+      Set neighbour as current node
+      Continue from {Link I}
+    If not exists
+      Pop the current node from the stack
+      Set the top most node as current node 
+      Continue from {link II}
+This creates a path and by drawing lines between nodes that aren't connect directly on the path we are able to create walls that surround the path that we made which enforces the path set by the algorithm thus creating a maze

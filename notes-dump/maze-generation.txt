@@ -1,14 +1,44 @@
-Alogirthm: Recursive back tracker and stack
-This ensures that each node is visitable by every other node 
-  Select a node 
-  Add node to the stack {Link I}
-  Mark the node as being visited
-  Check for any unvisited neighbours of the node {Link II}
-    If exists
-      Set neighbour as current node
-      Continue from {Link I}
-    If not exists
-      Pop the current node from the stack
-      Set the top most node as current node 
-      Continue from {link II}
-This creates a path and to show this visully we draw lines between nodes that aren't connect directly on the path we are able to create walls that surround the path that we made which enforces the path set by the algorithm thus creating a maze
+Wilson's algorithm
+
+initialize the maze with all walls
+choose a random initial cell as part of the maze
+while cells not in maze
+  choose a random cell not in the maze as the starting cell
+  perform a random walk from the starting cell
+    keep track of the path
+    if a cell is revisted, remove the loop from the path 
+  when a cell part of the maze is encountered add the path to the maze
+
+The algorithm is creates trully unbiased mazes but is also inefficient
+
+---
+
+Binary Tree
+
+for each cell randomly add either a "north" or a "west" passage to an adjacent cell. {can be any two directions provided they have a 90 degree offset}
+
+The algorithm creates a maze that has a diagonal bias
+
+---
+
+Sidewinder
+
+
+
+---
+
+Recursive back tracker 
+
+Select a node 
+Add node to the stack {Link I}
+Mark the node as being visited
+Check for any unvisited neighbours of the node {Link II}
+  If exists
+    Set neighbour as current node
+    Continue from {Link I}
+  If not exists
+    Pop the current node from the stack
+    Set the top most node as current node 
+    Continue from {link II}
+
+---

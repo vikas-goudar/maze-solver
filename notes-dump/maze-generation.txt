@@ -23,7 +23,10 @@ The algorithm creates a maze that has a diagonal bias
 
 Sidewinder
 
-
+similar to the binary tree
+at each cell can either go right and add to an 'active run' set or decide to go up {from some random cell within that run set}
+and end the 'active run' set.
+This creates a maze that has a horizontal bias
 
 ---
 
@@ -42,3 +45,5 @@ Check for any unvisited neighbours of the node {Link II}
     Continue from {link II}
 
 ---
+
+Eller's algorithm

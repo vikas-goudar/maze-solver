@@ -1,3 +1,9 @@
+Entry/Exit points
+
+each of the following algorithms generate perfect mazes, therefore any all can act as an entry/exit point
+
+---
+
 Wilson's algorithm
 
 initialize the maze with all walls
@@ -15,7 +21,7 @@ The algorithm is creates trully unbiased mazes but is also inefficient
 
 Binary Tree
 
-for each cell randomly add either a "north" or a "west" passage to an adjacent cell. {can be any two directions provided they have a 90 degree offset}
+for each cell randomly add either a "north" or a "west" passage to an adjacent cell. {can be any two directions provided they have a 90 degree offset, but should be consistent}
 
 The algorithm creates a maze that has a diagonal bias
 

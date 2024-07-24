@@ -21,18 +21,23 @@ The algorithm is creates trully unbiased mazes but is also inefficient
 
 Binary Tree
 
-for each cell randomly add either a "north" or a "west" passage to an adjacent cell. {can be any two directions provided they have a 90 degree offset, but should be consistent}
+for each cell randomly add either a "north" or a "west" passage to an adjacent cell.
 
-The algorithm creates a maze that has a diagonal bias
+The algorithm creates a maze that has a diagonal bias { since each cell exists to the right or up making it easy to go from the south-west node to the north-east node }. 
+The northern and eastern boundaries will be unbroken {nodes can't point out of the maze is the northern and eastern boundaries point in only one direction } 
+
+the reason it is called binary tree is because each node can have upto 2 children
 
 ---
 
 Sidewinder
 
 similar to the binary tree
-at each cell can either go right and add to an 'active run' set or decide to go up {from some random cell within that run set}
+at each cell can either go right and add to an 'active run' set or decide to go up {from some random cell within that run set } 
 and end the 'active run' set.
-This creates a maze that has a horizontal bias
+
+This creates a maze that has a horizontal bias { we can go to right in each set and are also guaranteed an up into another set }
+the northern boundary is unbroken as the only valid move is going to the right.
 
 ---
 

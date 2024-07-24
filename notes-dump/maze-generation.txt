@@ -47,3 +47,71 @@ Check for any unvisited neighbours of the node {Link II}
 ---
 
 Eller's algorithm
+
+this algorithm processes the maze row by row
+
+initialize the cells ofthe first row to be in their own set
+randomly join adjacent cells if they are not in the same set, merge cells of both the sets in a same set {indicates that the cells are connected}
+for each set, randomly create vertical connections downward to the next row, the cells that are connected share the set of the cell above them
+put the remaining cells in their own sets
+then again join adjacent cells ... and reapeat this process until the last row. In the last row you don't make any vertical downward connections
+
+since the algorithm processes the maze row by row, it has a horizontal bias
+
+---
+
+Hunt and Kill
+
+It goes on a random walk, and when it encounters a node that it has previously visited it stops {doesn't connect them}
+then it goes row by row searching for a cell that has been unvisited and is adjacent to a visited cell
+if it doesn't find on, it means that the maze has been generated
+if it finds on, firstly it connects the 1 common wall with the visited cell and continues on its walk as similiar to before
+
+creates long winding pathways
+
+---
+
+Recursive Division
+
+divide the field into two halves {horizontally or vertically}
+add a single passage in the wall
+repeat this process recursively on either side as long as you want since each step is a vlid maze
+
+---
+
+Kruskal's Algorithm
+
+we add random edges to the maze the only rule being we can't add an edge that connects two nodes of the same tree segment. and we add edges until all the nodes are visited 
+
+---
+
+Prim's Algorithm
+
+choose a random node
+mark it's neighbours as marked
+choose of one the marked nodes and connect to an already visited node
+add new neighbours to marked nodes and repeat this process until all nodes are visited
+
+---
+
+Growing Tree
+
+choose some random node and add it to a set
+
+choose a random node from the set
+choose a random unvisited neighbour connect it and and add that neighbour to the set
+repeat this process
+if at some point we get a node that no longer has any unvisited nodes, remove it from the set
+when the set becomes empty the maze is generated
+
+the we choose the random node from the set decides the nature of the maze
+using LIFO makes it like recursive backtracking
+using randomized selection makes it like prims
+
+---
+
+Growing Binary Tree
+
+It's the same as growing tree but instead of 1 unvisited neighbour we add 2 unvisited 2 unvisited neighbours
+
+the point is we cann the properties of two existing algorithsm and create new mazes

@@ -1,4 +1,4 @@
--> maze generation
+-> maze generation algorithms
 -> maze solving algorithms
 -> gui with option to select between different algorithms
 -> performance analysis of the different algorithms

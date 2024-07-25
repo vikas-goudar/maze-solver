@@ -1,5 +1,10 @@
 -> maze generation algorithms
 -> maze solving algorithms
 -> gui with option to select between different algorithms
--> use dijkstra to show the biases of mazes using colors
--> performance analysis of the different algorithms
+-> performance analysis of the different algorithms 
+  -> for maze generation
+    -> use dijkstra to show the biases of mazes using colors
+    -> can show number of dead ends by coloring on basis of passages connected
+    -> con show ratio of horizontal vs vertical passages
+-> for maze solution
+  -> paths taken to reach the final node

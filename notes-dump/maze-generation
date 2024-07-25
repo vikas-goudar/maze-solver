@@ -17,6 +17,18 @@ starting node and final node respectively
 
 ---
 
+Aldous-Broder's algorithm
+unbiased
+
+start a random node as current node
+
+randomly visit one of it's neighbours and set it as the current node, if it was unvisited prior make a connection between the two nodes
+repeat this process until all the nodes are visited
+
+creates an unbiased maze but is extremely slow
+
+---
+
 Wilson's algorithm
 
 initialize the maze with all walls
@@ -33,6 +45,7 @@ The algorithm is creates trully unbiased mazes but is also inefficient
 ---
 
 Binary Tree
+biased
 
 for each cell randomly add either a "north" or a "west" passage to an adjacent cell.
 
@@ -44,6 +57,7 @@ the reason it is called binary tree is because each node can have upto 2 childre
 ---
 
 Sidewinder
+biased
 
 similar to the binary tree
 at each cell can either go right and add to an 'active run' set or decide to go up {from some random cell within that run set } 
@@ -55,6 +69,7 @@ the northern boundary is unbroken as the only valid move is going to the right.
 ---
 
 Recursive back tracker 
+biased
 
 Select a node 
 Add node to the stack {Link I}

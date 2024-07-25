@@ -6,8 +6,7 @@ each of the following algorithms generate perfect mazes, therefore any all can a
 
 Longest path
 
-one of the ways to make the maze harder to solve is to use the longest path in the maze, however this is an np hard problem
-but if we consider it to be a perfect maze, we can use dijkstra 
+one of the ways to make the maze harder to solve is to use the longest path in the maze, however this is an np hard problem but if we consider it to be a perfect maze, we can use dijkstra 
 
 we start the algorithm on a random node and find the node with the largest value
 however we must now repeat the algorithm again from the 'largest value' node, since the inititial node could have been present in the 
@@ -26,33 +25,38 @@ randomly visit one of it's neighbours and set it as the current node, if it was 
 repeat this process until all the nodes are visited
 
 creates an unbiased maze but is extremely slow
+it starts fast but ends slow because the algorithm searches for unvisited nodes which become less and less as the algorithm progresses
 
 ---
 
 Wilson's algorithm
+unbiased 
 
-initialize the maze with all walls
-choose a random initial cell as part of the maze
-while cells not in maze
-  choose a random cell not in the maze as the starting cell
-  perform a random walk from the starting cell
-    keep track of the path
-    if a cell is revisted, remove the loop from the path 
-  when a cell part of the maze is encountered add the path to the maze
+choose a random node and mark it as visited
 
-The algorithm is creates trully unbiased mazes but is also inefficient
+choose any univisited node and start a loop-erased walk { if at any point the path we are taking happens to intersect itself, remove the 
+loop before continuing } until reaching a visited node
+add the path to the maze, marking each of the nodes in the path as visited
+repeat this process, until all the nodes are visited
+
+creates an unbiased maze but is also slow
+it start slow but ends fast because the algorithm searches for visited nodes which are less initialy but increase as the algorithm 
+progresses
 
 ---
 
 Binary Tree
 biased
 
-for each cell randomly add either a "north" or a "west" passage to an adjacent cell.
-
-The algorithm creates a maze that has a diagonal bias { since each cell exists to the right or up making it easy to go from the south-west node to the north-east node }. 
-The northern and eastern boundaries will be unbroken {nodes can't point out of the maze is the northern and eastern boundaries point in only one direction } 
+for each cell randomly add either a "north" or a "west" passage to an adjacent cell { don't go out of bounds }
 
 the reason it is called binary tree is because each node can have upto 2 children
+
+The algorithm creates a maze that has a diagonal bias { since each cell exists to the right or up making it easy to go 
+from the south-west node to the north-east node but vice versa is hard }
+The northern and eastern boundaries will be unbroken {nodes can't point out of the maze, therefore in the northern and eastern
+boundaries the nodes has passages in the same direction } 
+
 
 ---
 
@@ -100,13 +104,22 @@ since the algorithm processes the maze row by row, it has a horizontal bias
 ---
 
 Hunt and Kill
+biased
 
-It goes on a random walk, and when it encounters a node that it has previously visited it stops {doesn't connect them}
-then it goes row by row searching for a cell that has been unvisited and is adjacent to a visited cell
-if it doesn't find on, it means that the maze has been generated
-if it finds on, firstly it connects the 1 common wall with the visited cell and continues on its walk as similiar to before
+set a random node as the current node
 
+kill phase
+choose a random neighbour that hasn't been visited 
+set the neighbour as the current node and mark as visited
+this continues until the algorithm corners itself
+then start the hunt phase
+scan from the top row until we encounter an unvisited node which is bordered by a visited node
+make that node as the current node, connect the node to one of it's visited neibhouring nodes
+and start the kill phase again 
+repeat this process until there are no nodes left
 creates long winding pathways
+
+the algorithm has a bias, it creates long winding passages without much dead ends
 
 ---
 

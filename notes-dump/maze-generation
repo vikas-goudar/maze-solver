@@ -67,7 +67,7 @@ similar to the binary tree
 at each cell can either go right and add to an 'active run' set or decide to go up {from some random cell within that run set } 
 and end the 'active run' set.
 
-This creates a maze that has a horizontal bias { we can go to right in each set and are also guaranteed an up into another set }
+This creates a maze that has a vertical bias { we can go to right in each set and are also guaranteed an up into another set }
 the northern boundary is unbroken as the only valid move is going to the right.
 
 ---
@@ -86,6 +86,10 @@ Check for any unvisited neighbours of the node {Link II}
     Pop the current node from the stack
     Set the top most node as current node 
     Continue from {link II}
+
+It has a bias of creating long winding passages and little dead ends
+It is similar to hunt and kill, recursive back tracker is faster because it has to visit each node only twice but less memory efficient
+because it has to maintain a stack
 
 ---
 
@@ -120,6 +124,8 @@ repeat this process until there are no nodes left
 creates long winding pathways
 
 the algorithm has a bias, it creates long winding passages without much dead ends
+the algortithm is similar to recursive back tracer, kill and hunt is more memory efficient since it doesn't have to maintain a stack 
+but is slower becuse it has to visit each cell multiple times during the hunt phases
 
 ---
 

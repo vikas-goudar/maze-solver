@@ -1,1 +1,17 @@
+Dijkstra's algorithm
+
+it finds the shortest distance from a node to every other node 
+
+set the value of each node as infinity/null and the starting node as 0
+set the starting node as the current node
+
+update the values of the neighbours of the current node that aren't visited if needed { if current + connection < node value }
+add the current node into a 'visited set'
+choose a cells with the least value that isn't visited and mark it as current node
+repeat the process until the ending node is found or if all nodes are visisted 
+{ if you don't find the ending node that means that there no possible path }
+
+then backtrack from the final node visiting the nodes with the lowest value.
+
+---
 

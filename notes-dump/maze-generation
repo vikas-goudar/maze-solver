@@ -16,6 +16,25 @@ starting node and final node respectively
 
 ---
 
+Shaping the maze
+
+we can mask the maze to make it resemble different words, by making some nodes unvisitable
+this however causes some algoriths to fail, for example binary tree and sidewinder might reach a lone boundary node where the only
+possible option is to go up, but if the above node is unvisitable, our boundary node becomes cutoff from the maze
+
+---
+
+Circular mazes
+
+we can use masks to make a circular shape but it will have jagged lines that might appear unappealing
+we do this by using polar grids, and such mazes are called theta or circular mazes
+
+we make the nodes by drawing concentric circles and then drawing diameters to divide them into nodes
+
+
+
+---
+
 Aldous-Broder's algorithm
 unbiased
 

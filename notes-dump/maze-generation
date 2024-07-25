@@ -4,6 +4,19 @@ each of the following algorithms generate perfect mazes, therefore any all can a
 
 ---
 
+Longest path
+
+one of the ways to make the maze harder to solve is to use the longest path in the maze, however this is an np hard problem
+but if we consider it to be a perfect maze, we can use dijkstra 
+
+we start the algorithm on a random node and find the node with the largest value
+however we must now repeat the algorithm again from the 'largest value' node, since the inititial node could have been present in the 
+middle of the longest path to the 'largest value' node
+by repeating the algorithm again from the perpective of the 'largest value' node we find the node furthest from it and mark them as 
+starting node and final node respectively
+
+---
+
 Wilson's algorithm
 
 initialize the maze with all walls

@@ -1,1 +1,15 @@
+Maze as a whole
+
+we want to be able to generate a maze of size x size
+we want to able to access a specific node of the maze using row, column co-ordinates
+we want to be able to iterate over the nodes of the maze
+
+---
+
+Nodes individually
+
+we want to be able to store the node's location 
+we want to be check the node's neighbours
+we want to be able to check the passages from the node
+we want to be able to choose a neighbour randomly
 

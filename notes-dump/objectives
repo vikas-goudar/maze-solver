@@ -1,5 +1,5 @@
 -> maze generation algorithms
 -> maze solving algorithms
 -> gui with option to select between different algorithms
--> use dijkstra to show the biases of mazes
+-> use dijkstra to show the biases of mazes using colors
 -> performance analysis of the different algorithms

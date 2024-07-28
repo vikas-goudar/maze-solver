@@ -1,2 +1,2 @@
 # Maze-Solver
-Implementing maze-solving algorithms and providing their performance analysis
+Implementing maze solving and maze generation algorithms and analyze them

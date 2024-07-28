@@ -3,6 +3,9 @@
 #include "maze.h"
 #include "node.h"
 
+using namespace std;
+
+
 Maze::Maze() : Maze(10 , 4){
   //default size is 10x10 and numNeighbours as 4
 

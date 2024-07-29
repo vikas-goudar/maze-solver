@@ -28,7 +28,7 @@ void Maze::setArrayNodes(){
   int edgeNode;
 
   while (yCoord < size){
-    if (xCoord == 0 || xCoord == (size-1) || yCoord0 == 0 || yCoord == (size-1)){
+    if (xCoord == 0 || xCoord == (size-1) || yCoord == 0 || yCoord == (size-1)){
       edgeNode = 1;
     }
     else{
@@ -49,9 +49,9 @@ Node* Maze::getNode(int xCoord , int yCoord){
 }
 
 Node* Maze::getRandomNode(){
-  random_device rd;
-  mt19937 gen(rd());
-  uniform_int_distribution<> distrib(0 , size*size - 1);
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distrib(0 , size*size - 1);
   int randomNumber = distrib(gen);
   
   return arrayNodes[randomNumber];
@@ -67,9 +67,9 @@ std::vector<Node*> Maze::getConnections(std::pair<int,int> node){
 
 Node* Maze::getRandomNeighbour(std::pair<int,int> node){
   int numConnected = node.getNumConnected();
-  random_device rd;
-  mt19937 gen(rd());
-  uniform_int_distribution<> distrib(0 , numConnected - 1);
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distrib(0 , numConnected - 1);
   int randomNumber = distrib(gen);
 
   return getConnections(node)[randomNumber]; 

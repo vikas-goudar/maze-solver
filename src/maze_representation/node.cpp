@@ -18,19 +18,19 @@ int Node::getIsEdgeNode(){
   return isEdgeNode;
 }
 
-pair<int,int> Node::getCoord(){
+std::pair<int,int> Node::getCoord(){
   return std::make_pair(xCoord , yCoord);
 }
 
-int getNumConnected(){
+int Node::getNumConnected(){
   return numConnected;
 }
 
-int getMaxNumNeighbours(){
+int Node::getMaxNumNeighbours(){
   return maxNumNeighbours;
 }
 
-std::vector<Node*> getConnections(){
+std::vector<Node*> Node::getConnections(){
   return connections;
 }
 

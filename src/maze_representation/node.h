@@ -11,8 +11,7 @@ class Node{
     int xCoord;
     int yCoord;
     int numNeighbours;
-    // [North , West , South , East]
-    Node** connections; //array of pointer of neighbours
+    Node** connections; //array of pointer of neighbours in clockwise order
     vector<int> connectionsInt; //vector of index of connected neighbours in connections
     int connectionsSize; //number of connected neighbours
   

@@ -18,7 +18,7 @@ int Node::getIsEdgeNode(){
   return isEdgeNode;
 }
 
-pair<int , int> Node::getCoord(){
+pair<int,int> Node::getCoord(){
   return std::make_pair(xCoord , yCoord);
 }
 
@@ -30,7 +30,7 @@ int getMaxNumNeighbours(){
   return maxNumNeighbours;
 }
 
-vector<Node*> getConnections(){
+std::vector<Node*> getConnections(){
   return connections;
 }
 

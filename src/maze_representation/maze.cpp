@@ -1,12 +1,12 @@
-#include "maze.h"
-#include "node.h"
-
 #include <random>
 #include <vector>
 
+#include "maze.h"
+#include "node.h"
+
+
 Maze::Maze() : Maze(10 , 4){
   //default size is 10x10 and maxNumNeighbours as 4
-
 }
 
 Maze::Maze(int size , int maxNumNeighbours){
@@ -29,10 +29,10 @@ void Maze::setArrayNodes(){
 
   while (yCoord < size){
     if (xCoord == 0 || xCoord == (size-1) || yCoord0 == 0 || yCoord == (size-1)){
-      edgeNode = 0;
+      edgeNode = 1;
     }
     else{
-      edgeNode = 1;
+      edgeNode = 0;
     }
 
     arrayNodes[yCoord*size + xCoord] = new Node(xCoord , yCoord , maxNumNeighbour , edgeNode);
@@ -72,6 +72,5 @@ Node* Maze::getRandomNeighbour(std::pair<int,int> node){
   uniform_int_distribution<> distrib(0 , numConnected - 1);
   int randomNumber = distrib(gen);
 
-  return getConnections(node)[randomNumber];
-  
+  return getConnections(node)[randomNumber]; 
 }

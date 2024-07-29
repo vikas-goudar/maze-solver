@@ -10,6 +10,7 @@ class Node{
     int yCoord;
     int numConnected;
     int isEdgeNode;
+    int connectionsSize;
     int maxNumNeighbours;// max num of neighbours a node can have
 
     std::vector<Node*> connections;
@@ -19,7 +20,7 @@ class Node{
     ~Node();
      
     int getIsEdgeNode();
-    std::pair<int , int> getCoord();
+    std::pair<int,int> getCoord();
     int getNumConnected();
     int getMaxNumNeighbours();
     std::vector<Node*> getConnections();

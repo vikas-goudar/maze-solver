@@ -3,6 +3,7 @@
 
 #include "node.h"
 #include <vector>
+#include <utility>
 
 using namespace std;
 
@@ -11,15 +12,22 @@ class Maze{
   private:
     int size;
     Node** arrayNodes;
-    int numNeighbours;
+    int maxNumNeighbours;
 
   public:
     Maze();
-    Maze(int size , int numNeighbours);
+    Maze(int size , int maxNumNeighbours);
     ~Maze();
-    Node* getRandomNode();
+
+    void setArrayNodes();
+    
     Node* getNode(int xCoord , int yCoord);
-    void printNodes();
+    Node* getRandomNode();
+
+    void connectNodes(std::pair<int,int> src, std::pair<int,int> dest);
+    std::vector<Node*> getConnections(std::pair<int,int> node);
+
+
 };
 
 #endif

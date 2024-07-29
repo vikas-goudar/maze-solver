@@ -2,25 +2,29 @@
 #define NODE_H
 
 #include <vector>
-
-using namespace std;
-
+#include <utility>
 
 class Node{
   private:
     int xCoord;
     int yCoord;
-    int numNeighbours;
-    Node** connections; //array of pointer of neighbours in clockwise order
-    vector<int> connectionsInt; //vector of index of connected neighbours in connections
-    int connectionsSize; //number of connected neighbours
-  
+    int numConnected;
+    int isEdgeNode;
+    int maxNumNeighbours;// max num of neighbours a node can have
+
+    std::vector<Node*> connections;
+
   public:
-    Node(int xCoord , int yCoord , int numNeighbours);
+    Node(int xCoord , int yCoord , int maxNumNeighbours , int isEdgeNode);
     ~Node();
-    vector<int> getCoord();
-    void connectNode(Node* node , int direction , int bidi);
-    Node* getRandomNeighbour();
+     
+    int getIsEdgeNode();
+    std::pair<int , int> getCoord();
+    int getNumConnected();
+    int getMaxNumNeighbours();
+    std::vector<Node*> getConnections();
+    
+    void connectNode(Node* node , int bidi);
 };
 
 #endif

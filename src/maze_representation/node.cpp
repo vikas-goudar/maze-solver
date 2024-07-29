@@ -1,41 +1,45 @@
-#include <random>
 #include <vector>
+#include <utiltiy>
 #include "node.h"
 
-using namespace std;
 
-
-Node::Node(int xCoord , int yCoord, int numNeighbours){
+Node::Node(int xCoord , int yCoord , int maxNumNeighbours , int isEdgeNode){
   this->xCoord = xCoord;
   this->yCoord = yCoord;
-  this->numNeighbours = numNeighbours;
-  connections = new Node*[numNeighbours]();
-  connectionsSize = 0; //number of connections
+  this->maxNumNeighbours = maxNumNeighbours;
+  connectionsSize = 0; 
+  this->isEdgeNode = isEdgeNode;
 }
 
 Node::~Node(){
-  delete[] connections;
-  /* if nodes are dynamically allocated, delete them also */
 }
 
-vector<int> Node::getCoord(){
-  return {xCoord , yCoord};
+int Node::getIsEdgeNode(){
+  return isEdgeNode;
 }
 
-void Node::connectNode(Node* node , int direction , int bidi){
-  connections[direction] = node;
-  connectionsInt.push_back(direction);
+pair<int , int> Node::getCoord(){
+  return std::make_pair(xCoord , yCoord);
+}
+
+int getNumConnected(){
+  return numConnected;
+}
+
+int getMaxNumNeighbours(){
+  return maxNumNeighbours;
+}
+
+vector<Node*> getConnections(){
+  return connections;
+}
+
+void Node::connectNode(Node* node , int bidi){
+  connections.push_back(node);
   connectionsSize++;
   if (bidi == 1){
-    node->connectNode(this , (direction+2)%4 , 0);
+    node->connectNode(this , 0);
   }
 }
 
-Node* Node::getRandomNeighbour(){
-  random_device rd;
-  mt19937 gen(rd());
-  uniform_int_distribution<> distrib(0,connectionsSize - 1);
-  int randomNumber = distrib(gen);
 
-  return connections[randomNumber];
-}

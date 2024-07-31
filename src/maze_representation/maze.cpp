@@ -73,6 +73,3 @@ Node* Maze::getRandomConnection(std::pair<int,int> node){
   return getConnections(node)[randomNumber]; 
 }
 
-Node* Maze::getRandomNeighbour(std::pair<int,int> node){
-  
-}

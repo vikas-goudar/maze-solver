@@ -24,7 +24,6 @@ class Maze{
     void connectNodes(std::pair<int,int> src, std::pair<int,int> dest , int bidi);
     std::vector<Node*> getConnections(std::pair<int,int> node);
     Node* getRandomConnection(std::pair<int,int> node);
-    Node* getRandomNeighbour(std::pair<int,int> node);
 };
 
 #endif

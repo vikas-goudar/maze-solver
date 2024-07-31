@@ -16,3 +16,5 @@ class AldousBroder{
     int isVisited(Node* node);
     void markVisited(Node* node);
 };
+
+#endif

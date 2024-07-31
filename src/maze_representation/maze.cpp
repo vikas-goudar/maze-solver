@@ -55,6 +55,10 @@ Node* Maze::getRandomNode(){
   return arrayNodes[randomNumber];
 }
 
+int Maze::getSize(){
+  return size;
+}
+
 void Maze::connectNodes(std::pair<int,int> src , std::pair<int,int> dest , int bidi){
   getNode(src)->connectNode(getNode(dest) , bidi);
 }

@@ -1,7 +1,8 @@
 #include "../maze_representation/maze.h"
+#include "aldous_broder.h"
 
 AldousBroder::AldousBroder(Maze* maze){
-  this->size = maze->size;
+  this->size = maze->getSize();
   visitedMask = 0;
   visitedNum = 0;
 
@@ -11,14 +12,14 @@ AldousBroder::AldousBroder(Maze* maze){
 void AldousBroder::generateMaze(Maze* maze){
   Node* currentNode = maze->getRandomNode();
 
-  while (!isComplete(Maze* maze)){
+  while (!isComplete()){
     Node* randomConnection = maze->getRandomConnection(currentNode->getCoord());
-    if (isVisited(randomConnection){
+    if (isVisited(randomConnection)){
       currentNode = randomConnection;
     }
     else{
       markVisited(randomConnection);
-      maze->connectNodes(currentNode->getCoord(),randomConnection->getCoord(),1)
+      maze->connectNodes(currentNode->getCoord(),randomConnection->getCoord(),1);
       currentNode = randomConnection;
     }
   }

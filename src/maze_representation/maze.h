@@ -20,6 +20,7 @@ class Maze{
     
     Node* getNode(std::pair<int,int> coord);
     Node* getRandomNode();
+    int getSize();
 
     void connectNodes(std::pair<int,int> src, std::pair<int,int> dest , int bidi);
     std::vector<Node*> getConnections(std::pair<int,int> node);

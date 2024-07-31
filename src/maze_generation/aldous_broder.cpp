@@ -1,4 +1,4 @@
-#include "maze.h"
+#include "./maze_representation/maze.h"
 
 AldousBroder::AldousBroder(Maze* maze){
   this->size = maze->size;

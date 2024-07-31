@@ -6,18 +6,14 @@
 
 class Node{
   private:
-    int xCoord;
-    int yCoord;
+    std::pair<int,int> coord;
     int numConnected;
     int isEdgeNode;
     int connectionsSize;
-    int maxNumNeighbours;// max num of neighbours a node can have
-
     std::vector<Node*> connections;
 
   public:
-    Node(int xCoord , int yCoord , int maxNumNeighbours , int isEdgeNode);
-    ~Node();
+    Node(std::pair<int,int> coord , int maxNumNeighbours , int isEdgeNode);
      
     int getIsEdgeNode();
     std::pair<int,int> getCoord();

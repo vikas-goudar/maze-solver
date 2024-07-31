@@ -1,17 +1,13 @@
 #include <vector>
-#include <utiltiy>
+#include <utility>
 #include "node.h"
 
 
-Node::Node(int xCoord , int yCoord , int maxNumNeighbours , int isEdgeNode){
-  this->xCoord = xCoord;
-  this->yCoord = yCoord;
+Node::Node(std::pair<int,int> coord , int maxNumNeighbours , int isEdgeNode){
+  this->coord = coord;
   this->maxNumNeighbours = maxNumNeighbours;
   connectionsSize = 0; 
   this->isEdgeNode = isEdgeNode;
-}
-
-Node::~Node(){
 }
 
 int Node::getIsEdgeNode(){
@@ -19,7 +15,7 @@ int Node::getIsEdgeNode(){
 }
 
 std::pair<int,int> Node::getCoord(){
-  return std::make_pair(xCoord , yCoord);
+  return coord;
 }
 
 int Node::getNumConnected(){

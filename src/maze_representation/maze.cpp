@@ -1,8 +1,8 @@
 #include <random>
 #include <vector>
-
+#include <utility>
 #include "maze.h"
-#include "node.h"
+#include "node.cpp"
 
 
 Maze::Maze() : Maze(10 , 4){
@@ -35,7 +35,7 @@ void Maze::setArrayNodes(){
       edgeNode = 0;
     }
 
-    arrayNodes[yCoord*size + xCoord] = new Node(xCoord , yCoord , maxNumNeighbour , edgeNode);
+    arrayNodes[yCoord*size + xCoord] = new Node(std::make_pair(xCoord,yCoord) , maxNumNeighbours , edgeNode);
     
     xCoord = (xCoord+1)%size;
     if (xCoord == 0){
@@ -44,8 +44,8 @@ void Maze::setArrayNodes(){
   }
 }
 
-Node* Maze::getNode(int xCoord , int yCoord){
-  return arrayNodes[yCoord*size + xCoord];
+Node* Maze::getNode(std::pair<int,int> coord){ 
+  return arrayNodes[coord.second*size + coord.first];
 }
 
 Node* Maze::getRandomNode(){
@@ -58,15 +58,15 @@ Node* Maze::getRandomNode(){
 }
 
 void Maze::connectNodes(std::pair<int,int> src , std::pair<int,int> dest , int bidi){
-  getNode(src.first , src.second).connectNode(getNode(dest.first , dest.second , bidi);
+  getNode(src)->connectNode(getNode(dest) , bidi);
 }
 
 std::vector<Node*> Maze::getConnections(std::pair<int,int> node){
-  return getNode(node.first,node.second).getConnections();
+  return getNode(node)->getConnections();
 }
 
-Node* Maze::getRandomNeighbour(std::pair<int,int> node){
-  int numConnected = node.getNumConnected();
+Node* Maze::getRandomConnection(std::pair<int,int> node){
+  int numConnected = getNode(node)->getNumConnected();
   std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_int_distribution<> distrib(0 , numConnected - 1);

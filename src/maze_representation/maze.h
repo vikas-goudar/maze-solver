@@ -19,11 +19,13 @@ class Maze{
 
     void setArrayNodes();
     
-    Node* getNode(int xCoord , int yCoord);
+    Node* getNode(std::pair<int,int> coord);
     Node* getRandomNode();
 
-    void connectNodes(std::pair<int,int> src, std::pair<int,int> dest);
+    void connectNodes(std::pair<int,int> src, std::pair<int,int> dest , int bidi);
     std::vector<Node*> getConnections(std::pair<int,int> node);
+    Node* getRandomConnection(std::pair<int,int> node);
+    Node* getRandomNeighbour(std::pair<int,int> node);
 };
 
 #endif

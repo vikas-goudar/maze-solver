@@ -1,4 +1,3 @@
-#include "../maze_representation/maze.h"
 #include "aldous_broder.h"
 
 AldousBroder::AldousBroder(Maze* maze){

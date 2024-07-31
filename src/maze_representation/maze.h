@@ -10,11 +10,10 @@ class Maze{
   private:
     int size;
     Node** arrayNodes;
-    int maxNumNeighbours;
 
   public:
     Maze();
-    Maze(int size , int maxNumNeighbours);
+    Maze(int size);
     ~Maze();
 
     void setArrayNodes();

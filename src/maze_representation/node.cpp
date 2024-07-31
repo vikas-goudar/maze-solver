@@ -3,9 +3,8 @@
 #include "node.h"
 
 
-Node::Node(std::pair<int,int> coord , int maxNumNeighbours , int isEdgeNode){
+Node::Node(std::pair<int,int> coord , int isEdgeNode){
   this->coord = coord;
-  this->maxNumNeighbours = maxNumNeighbours;
   connectionsSize = 0; 
   this->isEdgeNode = isEdgeNode;
 }
@@ -20,10 +19,6 @@ std::pair<int,int> Node::getCoord(){
 
 int Node::getNumConnected(){
   return numConnected;
-}
-
-int Node::getMaxNumNeighbours(){
-  return maxNumNeighbours;
 }
 
 std::vector<Node*> Node::getConnections(){

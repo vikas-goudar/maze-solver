@@ -18,5 +18,7 @@ class MazeGenerator{
     void markVisited(std::pair<int,int> node);
     std::pair<int,int> getRandomNode();
     std::pair<int,int> getRandomConnection(std::pair<int,int> node);
-    void connectNodes(std::pair<int,int> currentNode,std::pair<int,int> randomNode);
+    void connectNodes(std::pair<int,int> currentNode,std::pair<int,int> randomNode,int bidi);
 };
+
+#endif

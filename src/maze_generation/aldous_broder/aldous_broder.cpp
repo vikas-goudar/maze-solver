@@ -15,7 +15,7 @@ void AldousBroder::generateMaze(){
     }
     else{
       mazeGenerator->markVisited(randomConnection);
-      mazeGenerator->connectNodes(currentNode,randomConnection);
+      mazeGenerator->connectNodes(currentNode,randomConnection,1);
       currentNode = randomConnection;
     }
   }

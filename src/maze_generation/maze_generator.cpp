@@ -18,7 +18,7 @@ int MazeGenerator::isComplete(){
 }
 
 int MazeGenerator::isVisited(std::pair<int,int> node){
-  if ((1 << (node.second*maze->getSize() + noed.first)) && visitedMask){
+  if ((1 << (node.second*maze->getSize() + node.first)) && visitedMask){
     return 1;
   }
   else{
@@ -26,7 +26,7 @@ int MazeGenerator::isVisited(std::pair<int,int> node){
   }
  
 void MazeGenerator::markVisited(std::pair<int,int> node){
-  visitedMask = ((1 << (node.second*maze->getSize() + node.first)) && visitedMask);
+  visitedMask = ((1 << (node.second*maze->getSize() + node.first)) || visitedMask);
   visitedNum++; 
 }
 
@@ -36,8 +36,8 @@ std::pair<int,int> MazeGenerator::getRandomNode(){
 }
 
 std::pair<int,int> MazeGenerator::getRandomConnection(std::pair<int,int> node){
-  Node* node = maze->getRandomConnection(node);
-  return node->getCoord();
+  Node* tempNode = maze->getRandomConnection(node);
+  return tempNode->getCoord();
 }
 
 void MazeGenerator::connectNode(std::pair<int,int> currentNode,std::pair<int,int> randomNode){

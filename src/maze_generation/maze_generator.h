@@ -1,7 +1,7 @@
 #ifndef MAZE_GENERATOR_H
 #define MAZE_GENERATOR_H
 
-#include "../../maze_representation/maze/maze.h"
+#include "../maze_representation/maze/maze.h"
 #include <utility>
 
 class MazeGenerator{

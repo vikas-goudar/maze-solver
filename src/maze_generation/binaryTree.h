@@ -7,6 +7,9 @@ from the south-west node to the north-east node but vice versa is hard }
 The northern and eastern boundaries will be unbroken {nodes can't point out of the maze, therefore in the northern and eastern
 boundaries the nodes has passages in the same direction } 
 
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
+
 #include "../maze_generator.h"
 
 class BinaryTree{
@@ -16,3 +19,5 @@ class BinaryTree{
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();
 }
+
+#endif

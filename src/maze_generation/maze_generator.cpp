@@ -54,5 +54,17 @@ int MazeGenerator::getSize(){
 }
 
 std::pair<int,int> MazeGenerator::getRandomUnvisitedNode(){	
-  this->distrib = std::uniform_int_distribution<> distrib(0 , numVisited-1);
+  this->distrib = std::uniform_int_distribution<> distrib(0 , size*size - numVisited);
+	randomNumber = distrib(gen);
+	int indexFromEnd = 0;
+	while (true){
+		if ((visitedMask >> indexFromEnd) && 1){
+			indexFromEnd++;
+		}
+		else{
+			break;
+		}
+	}
+	int oneDCoord size*size - 1 - indexFromEnd;
+	return make_pair(oneDCoord%size,oneDCoord/size);
 }

@@ -18,6 +18,7 @@ class BinaryTree{
     MazeGenerator* mazeGenerator;
     int size;
     std::random_device rd;
+    std::uniform_int_distribution<> distrib;
 
   public:
     BinaryTree(MazeGenerator* mazeGenerator);

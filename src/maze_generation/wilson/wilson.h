@@ -9,4 +9,13 @@ creates an unbiased maze but is also slow
 it start slow but ends fast because the algorithm searches for visited nodes which are less initialy but increase as the algorithm 
 progresses
 
+#ifndef WILSON_H
+#definr WILSON_H
+
+class Wilson{
+
+}
+
+#endif
+
 

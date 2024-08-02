@@ -15,15 +15,14 @@ BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;
   this->size = mazeGenerator->getSize();
 
-  std::random_device rd;
   std::mt19937 gen(rd());
   std::uniform_int_distribution<> distrib(0 , 1);
-    int randomNumber = distrib(gen);
+
 
 }
 
 int BinaryTree::randomSouthOrEast(std::pair<int,int> node){
-  
+  return distrib(gen);
 }
 
 void BinaryTree::generateMaze(){

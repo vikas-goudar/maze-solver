@@ -3,12 +3,17 @@
 
 #include "../maze_representation/maze/maze.h"
 #include <utility>
+#include <random>
 
 class MazeGenerator{
   private:
     long long visitedMask;
     long long visitedNum;
     Maze* maze;
+
+    std::random_device rd;
+    std::uniform_int_distribution<> distrib;
+
 
 	public:
     MazeGenerator(Maze* maze);
@@ -20,6 +25,7 @@ class MazeGenerator{
     std::pair<int,int> getRandomConnection(std::pair<int,int> node);
     void connectNodes(std::pair<int,int> sourceNode,std::pair<int,int> destinationNode,int bidi);
     int getSize();
+		std::pair<int,int> getRandomUnvisitedNode();
 };
 
 #endif

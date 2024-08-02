@@ -53,6 +53,6 @@ int MazeGenerator::getSize(){
   return maze->getSize();
 }
 
-std::pair<int,int> MazeGenerator::getRandomUnvisitedNode(){	
-  this->distrib = std::uniform_int_distribution<> distrib(0 , numVisited-1);
+std::pair<int,int> MazeGenerator:getRandomUnvisitedNode(){	
+  this->distrib = std::uniform_int_distribution<> distrib(0 , numUnvisited);
 }

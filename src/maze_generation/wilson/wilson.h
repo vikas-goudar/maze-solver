@@ -19,13 +19,11 @@ progresses
 class Wilson{
   private:
     MazeGenerator* mazeGenerator;
-	  std::random_device rd;
-    std::uniform_int_distribution<> distrib;
-
-  public:
+		int numUnvisited;
+		
+	public:
     AldousBroder(MazeGenerator* mazeGenerator);
     void generateMaze();
-		std::pair<int,int> getRandomUnvisitedNode();
 }
 
 #endif

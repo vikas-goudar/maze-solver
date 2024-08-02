@@ -9,14 +9,9 @@ class AldousBroder{
   private:
     MazeGenerator* mazeGenerator;
 
-    std::random_device rd;
-    std::uniform_int_distribution<> distrib;
-
-
   public:
     AldousBroder(MazeGenerator* mazeGenerator);
     void generateMaze();
-		int getRandomDirection(std::pair<int,int> node);
 };
 
 #endif

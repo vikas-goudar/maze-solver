@@ -68,3 +68,37 @@ std::pair<int,int> MazeGenerator::getRandomUnvisitedNode(){
 	int oneDCoord size*size - 1 - indexFromEnd;
 	return make_pair(oneDCoord%size,oneDCoord/size);
 }
+
+int MazeGenerator::getRandomDirection(std::pair<int,int> node){
+	vector<int> directions = {0,1,2,3};
+	if (node.second == 0){
+		directions.remove(0);
+	}
+	if (node.first+1==size){
+		directions.remove(1);
+	}
+	if ((node.second+1)==size){
+		directions.remove(2);
+	}
+	if (node.first==0){
+		directions.remove(3);
+	}
+  distrib = std::uniform_int_distribution<> distrib(0 ,directions.size()-1);
+	int randNum = distrib(gen);
+	return directions[randNum];
+}
+
+std::pair<int,int> nodeAtDirection(std::pair<int,int> node,int direction){
+	if (direction==0){
+		return make_pair(node.first,node.second-1);
+	}
+	else if (direction ==1){
+		return make_pair(node.first+1,node.second);
+	}
+	else if (direction ==2){
+		return make_pair(node.first,node.second+1);
+	}
+	else{
+		return make_pair(node.first-1,node.second);
+	}
+}

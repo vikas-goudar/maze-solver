@@ -15,7 +15,12 @@ progresses
 #include "../maze_generator.h"
 
 class Wilson{
+  private:
+    MazeGenerator* mazeGenerator;
 
+  public:
+    AldousBroder(MazeGenerator* mazeGenerator);
+    void generateMaze();
 }
 
 #endif

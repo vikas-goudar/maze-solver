@@ -17,6 +17,7 @@ class BinaryTree{
   private:
     MazeGenerator* mazeGenerator;
     int size;
+    std::random_device rd;
 
   public:
     BinaryTree(MazeGenerator* mazeGenerator);

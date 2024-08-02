@@ -16,7 +16,7 @@ BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->size = mazeGenerator->getSize();
 
   std::mt19937 gen(rd());
-  std::uniform_int_distribution<> distrib(0 , 1);
+  this->distrib = std::uniform_int_distribution<> distrib(0 , 1);
 
 
 }

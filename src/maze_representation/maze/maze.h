@@ -4,6 +4,7 @@
 #include <vector>
 #include <utility>
 #include "../node/node.h"
+#include <random>
 
 
 class Maze{

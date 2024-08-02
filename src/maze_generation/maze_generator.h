@@ -10,7 +10,7 @@ class MazeGenerator{
     long long visitedNum;
     Maze* maze;
 
-  public:
+	public:
     MazeGenerator(Maze* maze);
     
     int isComplete();

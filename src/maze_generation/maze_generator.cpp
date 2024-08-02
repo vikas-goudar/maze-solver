@@ -5,6 +5,7 @@ MazeGenerator::MazeGenerator(Maze* maze){
   this->maze = maze;
   visitedMask = 0;
   visitedNum = 0;
+ 	
 }
 
 int MazeGenerator::isComplete(){
@@ -48,4 +49,5 @@ void MazeGenerator::connectNodes(std::pair<int,int> sourceNode,std::pair<int,int
 int MazeGenerator::getSize(){
   return maze->getSize();
 }
+
 

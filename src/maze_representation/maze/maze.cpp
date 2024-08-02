@@ -11,6 +11,7 @@ Maze::Maze() : Maze(10){
 Maze::Maze(int size){
   this->size = size;
   arrayNodes = new Node*[size*size];
+  this->gen = std::mt19937 gen(rd());
 }
 
 Maze::~Maze(){
@@ -47,8 +48,6 @@ Node* Maze::getNode(std::pair<int,int> coord){
 }
 
 Node* Maze::getRandomNode(){
-  std::random_device rd;
-  std::mt19937 gen(rd());
   std::uniform_int_distribution<> distrib(0 , size*size - 1);
   int randomNumber = distrib(gen);
   
@@ -69,8 +68,6 @@ std::vector<Node*> Maze::getConnections(std::pair<int,int> node){
 
 Node* Maze::getRandomConnection(std::pair<int,int> node){
   int numConnected = getNode(node)->getNumConnected();
-  std::random_device rd;
-  std::mt19937 gen(rd());
   std::uniform_int_distribution<> distrib(0 , numConnected - 1);
   int randomNumber = distrib(gen);
 

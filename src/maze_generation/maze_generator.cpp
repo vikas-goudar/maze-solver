@@ -45,3 +45,6 @@ void MazeGenerator::connectNodes(std::pair<int,int> sourceNode,std::pair<int,int
   maze->connectNodes(sourceNode, destinationNode,bidi);
 }
 
+int MazeGenerator::getSize(){
+  return maze->getSize();
+}

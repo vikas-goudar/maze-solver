@@ -1,6 +1,6 @@
-#inclide <utility>
-#include "binary_tree.h"
+#include <utility>
 #include <random>
+#include "binary_tree.h"
 
 BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;

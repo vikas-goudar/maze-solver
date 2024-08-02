@@ -12,6 +12,7 @@ boundaries the nodes has passages in the same direction }
 
 BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;
+  this->size = size;
 }
 
 void BinaryTree::generateMaze(){

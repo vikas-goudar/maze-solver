@@ -13,12 +13,21 @@ boundaries the nodes has passages in the same direction }
 
 BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;
-  this->size = size;
+  this->size = mazeGenerator->getSize();
+
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distrib(0 , 1);
+    int randomNumber = distrib(gen);
+
+}
+
+int BinaryTree::randomSouthOrEast(std::pair<int,int> node){
+  
 }
 
 void BinaryTree::generateMaze(){
-  int xCoord = 0;
-  int yCoord = 0;
+  std::pair<int,int> node = make_pair(0,0);
   for (int i = 0; i<size*size; i++){
     
   }

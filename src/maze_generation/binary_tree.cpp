@@ -1,5 +1,5 @@
-#include "binary_tree.h"
 #inclide <utility>
+#include "binary_tree.h"
 #include <random>
 
 BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){

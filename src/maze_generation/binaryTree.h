@@ -11,6 +11,7 @@ boundaries the nodes has passages in the same direction }
 #define BINARY_TREE_H
 
 #include "../maze_generator.h"
+#include <utility>
 
 class BinaryTree{
   private:
@@ -20,6 +21,8 @@ class BinaryTree{
   public:
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();
+    int randomSouthOrEast(std::pair<int,int> node);
+    
 }
 
 #endif

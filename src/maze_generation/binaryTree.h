@@ -15,6 +15,8 @@ boundaries the nodes has passages in the same direction }
 class BinaryTree{
   private:
     MazeGenerator* mazeGenerator;
+    int size;
+
   public:
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();

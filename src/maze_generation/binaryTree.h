@@ -15,7 +15,6 @@ class BinaryTree{
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();
     int randomSouthOrEast(std::pair<int,int> node);
-    
 }
 
 #endif

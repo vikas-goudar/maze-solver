@@ -1,6 +1,7 @@
 #include "aldous_broder.h"
 #include <utility>
 #include <vector>
+#include <random>
 
 AldousBroder::AldousBroder(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;

@@ -10,6 +10,8 @@ class Maze{
   private:
     int size;
     Node** arrayNodes;
+    std::random_device rd;
+    std::mt19937 gen;
 
   public:
     Maze();

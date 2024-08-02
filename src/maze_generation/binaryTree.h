@@ -7,3 +7,4 @@ from the south-west node to the north-east node but vice versa is hard }
 The northern and eastern boundaries will be unbroken {nodes can't point out of the maze, therefore in the northern and eastern
 boundaries the nodes has passages in the same direction } 
 
+#include "../maze_generator.h"

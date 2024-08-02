@@ -17,8 +17,6 @@ BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
 
   std::mt19937 gen(rd());
   this->distrib = std::uniform_int_distribution<> distrib(0 , 1);
-
-
 }
 
 int BinaryTree::randomSouthOrEast(std::pair<int,int> node){

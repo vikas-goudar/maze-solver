@@ -10,7 +10,9 @@ it start slow but ends fast because the algorithm searches for visited nodes whi
 progresses
 
 #ifndef WILSON_H
-#definr WILSON_H
+#define WILSON_H
+
+#include "../maze_generator.h"
 
 class Wilson{
 

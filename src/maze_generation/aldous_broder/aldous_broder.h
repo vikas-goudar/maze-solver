@@ -2,14 +2,20 @@
 #define ALDOUS_BRODER_H
 
 #include "../maze_generator.h"
+#include <utility>
 
 class AldousBroder{
   private:
     MazeGenerator* mazeGenerator;
 
+    std::random_device rd;
+    std::uniform_int_distribution<> distrib;
+
+
   public:
     AldousBroder(MazeGenerator* mazeGenerator);
     void generateMaze();
+		int getRandomDirection(std::pair<int,int> node);
 };
 
 #endif

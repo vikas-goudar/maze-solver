@@ -14,7 +14,7 @@ class BinaryTree{
   public:
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();
-    int randomSouthOrEast(std::pair<int,int> node);
+    int getRandomSouthOrEast(std::pair<int,int> node);
 }
 
 #endif

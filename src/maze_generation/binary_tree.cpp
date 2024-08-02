@@ -16,5 +16,5 @@ BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
 }
 
 void BinaryTree::generateMaze(){
-  
+  for (
 }

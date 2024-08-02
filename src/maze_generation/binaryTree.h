@@ -8,3 +8,11 @@ The northern and eastern boundaries will be unbroken {nodes can't point out of t
 boundaries the nodes has passages in the same direction } 
 
 #include "../maze_generator.h"
+
+class BinaryTree{
+  private:
+    MazeGenerator* mazeGenerator;
+  public:
+    BinaryTree(MazeGenerator* mazeGenerator);
+    void generateMaze();
+}

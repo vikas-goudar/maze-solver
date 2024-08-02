@@ -41,7 +41,7 @@ std::pair<int,int> MazeGenerator::getRandomConnection(std::pair<int,int> node){
   return tempNode->getCoord();
 }
 
-void MazeGenerator::connectNodes(std::pair<int,int> currentNode,std::pair<int,int> randomNode,int bidi){
-  maze->connectNodes(currentNode,randomNode,bidi);
+void MazeGenerator::connectNodes(std::pair<int,int> sourceNode,std::pair<int,int> destinationNode,int bidi){
+  maze->connectNodes(sourceNode, destinationNode,bidi);
 }
 

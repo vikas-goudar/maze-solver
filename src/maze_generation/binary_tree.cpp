@@ -9,6 +9,7 @@ boundaries the nodes has passages in the same direction }
 
 #include "binary_tree.h"
 #inclide <utility>
+#include <random>
 
 BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
   this->mazeGenerator = mazeGenerator;
@@ -16,5 +17,9 @@ BinaryTree::BinaryTree(MazeGenerator* mazeGenerator){
 }
 
 void BinaryTree::generateMaze(){
-  for (
+  int xCoord = 0;
+  int yCoord = 0;
+  for (int i = 0; i<size*size; i++){
+    
+  }
 }

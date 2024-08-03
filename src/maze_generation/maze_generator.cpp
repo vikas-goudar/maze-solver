@@ -98,7 +98,7 @@ int MazeGenerator::getRandomDirection(std::pair<int,int> node){
 	return directions[randNum];
 }
 
-std::pair<int,int> nodeAtDirection(std::pair<int,int> node,int direction){
+std::pair<int,int> MazeGenerator::nodeAtDirection(std::pair<int,int> node,int direction){
 	if (direction==0){
 		return std::make_pair(node.first,node.second-1);
 	}

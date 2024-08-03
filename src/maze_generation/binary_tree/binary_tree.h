@@ -10,12 +10,13 @@ class BinaryTree{
     MazeGenerator* mazeGenerator;
     int size;
     std::random_device rd;
+		std::mt19937 gen;
     std::uniform_int_distribution<> distrib;
 
   public:
     BinaryTree(MazeGenerator* mazeGenerator);
     void generateMaze();
     int getRandomSouthOrEast(std::pair<int,int> node);
-}
+};
 
 #endif

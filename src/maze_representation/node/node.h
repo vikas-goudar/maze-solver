@@ -9,7 +9,6 @@ class Node{
     std::pair<int,int> coord;
     int numConnected;
     int isEdgeNode;
-    int connectionsSize;
     std::vector<Node*> connections;
 
   public:

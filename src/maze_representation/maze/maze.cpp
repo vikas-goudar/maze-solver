@@ -11,7 +11,7 @@ Maze::Maze() : Maze(10){
 Maze::Maze(int size){
   this->size = size;
   arrayNodes = new Node*[size*size];
-  this->gen = std::mt19937 gen(rd());
+  gen = std::mt19937(rd());
 }
 
 Maze::~Maze(){

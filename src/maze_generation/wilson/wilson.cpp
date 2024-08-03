@@ -18,21 +18,22 @@ void Wilson::generateMaze(){
 		while (!path.empty()){
 			tempNode = path.back();
 			path.pop_back();
-			mazeGenerator->connectNodes(node,tempNode);
+			mazeGenerator->connectNodes(node,tempNode,1);
 			node = tempNode;
 		}
 	}
 }
 
-std::vector<std::pair<int,int>> loopErasedWalk(std::pair<int,int> node){
+std::vector<std::pair<int,int>> Wilson::loopErasedWalk(std::pair<int,int> node){
 	std::vector<std::pair<int,int>> path;
 	path.push_back(node);
 	int direction;
 	int loopVisitedMask = 0;
+	int size = mazeGenerator->getSize();
 
 	while (true){
-		direction = MazeGenerator->getRandomDirection(node);
-		node = MazeGenerator->nodeAtDirection(node,direction);
+		direction = mazeGenerator->getRandomDirection(node);
+		node = mazeGenerator->nodeAtDirection(node,direction);
 		if ((1<<node.second*size+node.first)&&loopVisitedMask){
 			while (true){
 				if (path.back() == node){
@@ -44,7 +45,7 @@ std::vector<std::pair<int,int>> loopErasedWalk(std::pair<int,int> node){
 			}
 		}
 		else{
-			loopVisitedMask = (1<<tempNode.second*size+tempNode.first)&&loopVisitedMask;	
+			loopVisitedMask = (1<<node.second*size+node.first)&&loopVisitedMask;	
 			path.push_back(node);
 			break;
 		}

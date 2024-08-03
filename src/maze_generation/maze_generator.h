@@ -8,10 +8,11 @@
 class MazeGenerator{
   private:
     long long visitedMask;
-    long long visitedNum;
+    long long numVisited;
     Maze* maze;
 
     std::random_device rd;
+    std::mt19937 gen;
     std::uniform_int_distribution<> distrib;
 
 
@@ -26,7 +27,7 @@ class MazeGenerator{
     void connectNodes(std::pair<int,int> sourceNode,std::pair<int,int> destinationNode,int bidi);
     int getSize();
 		std::pair<int,int> getRandomUnvisitedNode();
-		int getRandomDirection(std::pair<int,int>, int direction);
+		int getRandomDirection(std::pair<int,int>);
     std::pair<int,int> nodeAtDirection(std::pair<int,int> node,int direction);
 };
 

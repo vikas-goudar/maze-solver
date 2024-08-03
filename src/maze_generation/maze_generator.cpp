@@ -1,19 +1,19 @@
 #include "maze_generator.h"
 #include <utility>
 #include <random>
+#include <algorithm>
 
 MazeGenerator::MazeGenerator(Maze* maze){
   this->maze = maze;
   visitedMask = 0;
-  visitedNum = 0;
-	
-	std::mt19937 gen(rd());
- 	
+  numVisited = 0;
+		
+  gen = std::mt19937(rd());
 }
 
 int MazeGenerator::isComplete(){
-  int size = maze->getSize();
-  if (visitedNum == (size*size - 1)){
+  int size = getSize();
+  if (numVisited == (size*size - 1)){
     return 1;
   }
   else{
@@ -31,8 +31,8 @@ int MazeGenerator::isVisited(std::pair<int,int> node){
 } 
 
 void MazeGenerator::markVisited(std::pair<int,int> node){
-  visitedMask = ((1 << (node.second*maze->getSize() + node.first)) || visitedMask);
-  visitedNum++; 
+  visitedMask = ((1 << (node.second*getSize() + node.first)) || visitedMask);
+  numVisited++; 
 }
 
 std::pair<int,int> MazeGenerator::getRandomNode(){
@@ -54,51 +54,61 @@ int MazeGenerator::getSize(){
 }
 
 std::pair<int,int> MazeGenerator::getRandomUnvisitedNode(){	
-  this->distrib = std::uniform_int_distribution<> distrib(0 , size*size - numVisited);
-	randomNumber = distrib(gen);
+	int size = getSize();
+  this->distrib = std::uniform_int_distribution<> (0 , size*size - numVisited);
+	int randomNumber = distrib(gen);
 	int indexFromEnd = 0;
+	int zeroOccurence = 0;
 	while (true){
 		if ((visitedMask >> indexFromEnd) && 1){
 			indexFromEnd++;
 		}
 		else{
-			break;
+			if (zeroOccurence == randomNumber){
+				break;
+			}
+			else{
+				zeroOccurence++;
+			}
 		}
 	}
-	int oneDCoord size*size - 1 - indexFromEnd;
-	return make_pair(oneDCoord%size,oneDCoord/size);
+	int oneDCoord = size*size - 1 - indexFromEnd;
+	return std::make_pair(oneDCoord%size,oneDCoord/size);
 }
 
 int MazeGenerator::getRandomDirection(std::pair<int,int> node){
-	vector<int> directions = {0,1,2,3};
+	int size = getSize();
+	std::vector<int> directions = {0,1,2,3};
 	if (node.second == 0){
-		directions.remove(0);
+		directions.erase(std::remove(directions.begin(), directions.end(), 0), directions.end());
+		
 	}
 	if (node.first+1==size){
-		directions.remove(1);
+		directions.erase(std::remove(directions.begin(), directions.end(), 1), directions.end());
 	}
 	if ((node.second+1)==size){
-		directions.remove(2);
+		directions.erase(std::remove(directions.begin(), directions.end(), 2), directions.end());		
 	}
 	if (node.first==0){
-		directions.remove(3);
+		directions.erase(std::remove(directions.begin(), directions.end(), 3), directions.end());
+		
 	}
-  distrib = std::uniform_int_distribution<> distrib(0 ,directions.size()-1);
+  distrib = std::uniform_int_distribution<>(0 ,directions.size()-1);
 	int randNum = distrib(gen);
 	return directions[randNum];
 }
 
 std::pair<int,int> nodeAtDirection(std::pair<int,int> node,int direction){
 	if (direction==0){
-		return make_pair(node.first,node.second-1);
+		return std::make_pair(node.first,node.second-1);
 	}
 	else if (direction ==1){
-		return make_pair(node.first+1,node.second);
+		return std::make_pair(node.first+1,node.second);
 	}
 	else if (direction ==2){
-		return make_pair(node.first,node.second+1);
+		return std::make_pair(node.first,node.second+1);
 	}
 	else{
-		return make_pair(node.first-1,node.second);
+		return std::make_pair(node.first-1,node.second);
 	}
 }

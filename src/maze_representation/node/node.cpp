@@ -5,7 +5,7 @@
 
 Node::Node(std::pair<int,int> coord , int isEdgeNode){
   this->coord = coord;
-  connectionsSize = 0; 
+  numConnected = 0; 
   this->isEdgeNode = isEdgeNode;
 }
 
@@ -27,7 +27,7 @@ std::vector<Node*> Node::getConnections(){
 
 void Node::connectNode(Node* node , int bidi){
   connections.push_back(node);
-  connectionsSize++;
+  numConnected++;
   if (bidi == 1){
     node->connectNode(this , 0);
   }

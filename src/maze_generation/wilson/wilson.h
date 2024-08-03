@@ -11,10 +11,10 @@ class Wilson{
     MazeGenerator* mazeGenerator;
 		
 	public:
-    AldousBroder(MazeGenerator* mazeGenerator);
+    Wilson(MazeGenerator* mazeGenerator);
     void generateMaze();
 		std::vector<std::pair<int,int>> loopErasedWalk(std::pair<int,int> node);
-}
+};
 
 #endif
 

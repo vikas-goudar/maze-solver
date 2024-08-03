@@ -3,7 +3,6 @@
 
 #include "../maze_generator.h"
 #include <utility>
-#include <random>
 
 class AldousBroder{
   private:

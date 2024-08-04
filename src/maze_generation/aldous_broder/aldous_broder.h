@@ -2,7 +2,6 @@
 #define ALDOUS_BRODER_H
 
 #include "../maze_generator.h"
-#include <utility>
 
 class AldousBroder{
   private:

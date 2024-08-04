@@ -102,7 +102,7 @@ int MazeGenerator::getRandomDirection(std::pair<int,int> node){
 	return directions[randNum];
 }
 
-int MazeGenerator::getRandomUnvisitedDirection(std::pair<int,int>){
+int MazeGenerator::getRandomUnvisitedDirection(std::pair<int,int> node){
 	std::vector<int> directions = getAllDirections(node);
 	std::vector<int> unvisitedDirections;
 	std::pair<int,int> node;
@@ -113,9 +113,14 @@ int MazeGenerator::getRandomUnvisitedDirection(std::pair<int,int>){
 			unvisitedDirection.push_back(node);
 		}
 	}
-	distrib = std::uniform_int_distribution<>(0 ,unvisitedDirections.size()-1);
-	int randNum = distrib(gen);
-	return unvisitedDirections[randNum];
+	if (unvisitedDirections.empty()){
+		return -1;
+	}
+	else{
+		distrib = std::uniform_int_distribution<>(0 ,unvisitedDirections.size()-1);
+		int randNum = distrib(gen);
+		return unvisitedDirections[randNum];
+	}
 }
 
 std::pair<int,int> MazeGenerator::nodeAtDirection(std::pair<int,int> node,int direction){

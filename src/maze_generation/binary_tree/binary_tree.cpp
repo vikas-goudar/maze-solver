@@ -39,7 +39,7 @@ void BinaryTree::generateMaze(){
   std::pair<int,int> node = std::make_pair(0,0);
   for (int i = 0; i<size*size; i++){
     int dir = getRandomSouthOrEast(node);
-		mazeGenerator->connectNodes(mazeGenerator->nodeAtDirection(dir));
+		mazeGenerator->connectNodes(node,mazeGenerator->nodeAtDirection(dir),1);
 
     if ((node.first+1)%size == 0){
       node.first=0;

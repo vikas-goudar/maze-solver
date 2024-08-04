@@ -25,10 +25,10 @@ int BinaryTree::getRandomSouthOrEast(std::pair<int,int> node){
     return -1;
   }
   else if (!existsSouth){
-    return 0;
+    return 1;
   }
   else if (!existsEast){
-    return 1;
+    return 2;
   }
   else{
     return distrib(gen);
@@ -39,12 +39,7 @@ void BinaryTree::generateMaze(){
   std::pair<int,int> node = std::make_pair(0,0);
   for (int i = 0; i<size*size; i++){
     int dir = getRandomSouthOrEast(node);
-    if (dir == 0){
-      mazeGenerator->connectNodes(node,std::make_pair(node.first+1,node.second),1);
-    }
-    else{
-      mazeGenerator->connectNodes(node,std::make_pair(node.first,node.second+1),1);
-    }
+		mazeGenerator->connectNodes(mazeGenerator->nodeAtDirection(dir));
 
     if ((node.first+1)%size == 0){
       node.first=0;

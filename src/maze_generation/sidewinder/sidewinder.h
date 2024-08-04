@@ -13,7 +13,6 @@ class Sidewinder{
 		std::random_device rd;
 		std::mt19937 gen;
     std::uniform_int_distribution<> distrib;
-		std::uniform_int_distribution<> distribRandomUse;
 
 	public:
 		Sidewinder(MazeGenerator* mazeGenerator);

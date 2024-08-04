@@ -7,12 +7,12 @@ Sidewinder::Sidewinder(MazeGenerator* mazeGenerator){
 	this->size = mazeGenerator->getSize();
 	
 	gen = std::mt19937(rd());
-  this->distrib = std::uniform_int_distribution<> (0 , 1);
-}
+  }
 
 int Sidewinder::getRandomSouthOrEast(std::pair<int,int> node){
   int existsSouth = 1;
   int existsEast = 1;
+  distrib = std::uniform_int_distribution<> (0 , 1);
 
   if ((node.second*size+node.first+1)%size==0){
     existsEast=0;
@@ -45,8 +45,8 @@ void Sidewinder::generateMaze(){
     	mazeGenerator->connectNodes(node,mazeGenerator->nodeAtDirection(node,dir),1);
   	}
   	else{
-			this->distribRandomUse = std::uniform_int_distribution<> (0,activeSet.size()-1);	
-			int randNum = distribRandomUse(gen);
+			distrib = std::uniform_int_distribution<> (0,activeSet.size()-1);	
+			int randNum = distrib(gen);
 			std::pair<int,int> randomNode = activeSet[randNum];
     	mazeGenerator->connectNodes(randomNode,mazeGenerator->nodeAtDirection(node,0),1);
 			activeSet.clear();
